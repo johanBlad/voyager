@@ -13,12 +13,25 @@ repositories {
 	mavenCentral()
 }
 
+
+sourceSets {
+	main {
+		scala {
+			srcDirs = ['src/main/scala', 'src/main/java']
+		}
+		java {
+			srcDirs = []
+		}
+	}
+}
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.scala-lang:scala-library:2.13.4'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
 
 test {
 	useJUnitPlatform()
